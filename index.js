@@ -11,14 +11,67 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "What is the title of your project?",
-      name: "title"
+      message: "Github username",
+      name: "username"
     },
     {
       type: "input",
-      message: "Github username",
-      name: "username"
-    }
+      message: "What is the title of your project?",
+      name: "title"
+    },
+    //2. Describe your project
+    {
+      type: "input",
+      message: "How would you describe your project?",
+      name: "description"
+    },
+
+    //3.What do you need to install this project ie inquriere axios etc?
+    {
+      type: "checkbox",
+      message: "What do you need to install this project?",
+      name: "need",
+      choices: [
+        "node",
+        "jquery",
+        "npm",
+        "javascript",
+        "sanity",
+        "axios",
+        "inquirer"
+      ]
+    },
+
+    //4. What do you use this for?
+    {
+      type: "input",
+      message: "what do you use this for?",
+      name: "use"
+    },
+
+    //5. Liscense options (radio buttons)?
+
+    {
+      type: "list",
+      message: "What sort of liscense options do you want to use?",
+      name: "liscense",
+      choices: [
+        "OpenSource",
+        "you can steal it, but it sucks",
+        "Don't steal it",
+        "As long as you make it better than the DNC's app"
+      ]
+    },
+
+    //6. Names of additional contributors.
+    {
+      type: "input",
+      message: "Who else collabed on this?",
+      name: "collaborators"
+    },
+
+    //7.How do you test this?
+    { type: "input", message: "How do you test this thing?", name: "test" }
   ])
   .then(answers => {
     console.log(answers.title);

@@ -74,22 +74,34 @@ inquirer
     { type: "input", message: "How do you test this thing?", name: "test" }
   ])
   .then(answers => {
-    console.log(answers);
+    console.log(answers.title);
     axios
-      .get(`https://api.github.com/search/users?q=${answers.username}`)
+      .get(
+        `https://api.github.com/users/${answers.username}/repos?per_page=100`
+      )
       .then(function(userInfo) {
-        console.log(userInfo.data.avatar_url);
+        console.log(userInfo.data[0].owner.avatar_url);
 
         var profileString =
           //this is making the MD File
           `
-        ![photo](${userInfo.data.avatar_url})
+        ![photo](${userInfo.data[0].owner.avatar_url})
 
         # ${answers.title}
 
         > ${answers.description}
 
-        
+        > ${answers.need}
+
+        > ${answers.use}
+
+        > ${answers.liscense}
+
+        > ${answers.collaborators}
+
+        > ${answers.test}
+
+
         
         `;
         fs.writeFile("./profile/README.md", profileString, error => {

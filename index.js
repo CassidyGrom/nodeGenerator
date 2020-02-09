@@ -81,29 +81,34 @@ inquirer
       )
       .then(function(userInfo) {
         console.log(userInfo.data[0].owner.avatar_url);
+        //this is making the MD File
+        var profileString = `
+# ${answers.title}
 
-        var profileString =
-          //this is making the MD File
-          `
-        ![photo](${userInfo.data[0].owner.avatar_url})
+## Project Description
 
-        # ${answers.title}
+${answers.description}
 
-        > ${answers.description}
+## For installation, use:
 
-        > ${answers.need}
+${answers.need}
 
-        > ${answers.use}
+## Usage
+${answers.use}
 
-        > ${answers.liscense}
+## Liscense
+${answers.liscense}
 
-        > ${answers.collaborators}
+## Other contributors
+${answers.collaborators}
 
-        > ${answers.test}
+## To test
+${answers.test}
 
+## About the author
+![photo](${userInfo.data[0].owner.avatar_url})
 
-        
-        `;
+Email: `;
         fs.writeFile("./profile/README.md", profileString, error => {
           if (error) {
             console.log(error);

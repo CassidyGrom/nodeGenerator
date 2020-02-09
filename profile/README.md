@@ -1,27 +1,26 @@
 
-# The weird 88 kent
+# blah 2
 
 ## Project Description
 
-homey and kind. A bit innovative
 
+
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 ## For installation, use:
 
 
 
 ## Usage
-getting ahead in mario cart
+
 
 ## Liscense
 you can steal it, but it sucks
 
 ## Other contributors
-your mom
+
 
 ## To test
-don't
+
 
 ## About the author
-![photo](https://avatars2.githubusercontent.com/u/56407775?v=4)
-
-Email: 
+![photo](https://avatars2.githubusercontent.com/u/56407775?v=4) 

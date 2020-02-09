@@ -89,6 +89,7 @@ inquirer
 
 ${answers.description}
 
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 ## For installation, use:
 
 ${answers.need}
@@ -106,9 +107,7 @@ ${answers.collaborators}
 ${answers.test}
 
 ## About the author
-![photo](${userInfo.data[0].owner.avatar_url})
-
-Email: `;
+![photo](${userInfo.data[0].owner.avatar_url}) `;
         fs.writeFile("./profile/README.md", profileString, error => {
           if (error) {
             console.log(error);
